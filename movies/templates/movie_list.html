@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul>
+{% for movie in movies %}
+    <li>
+        Film:  {{ movie.title }}
+        (data publikacji: {{ movie.published_at }})
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

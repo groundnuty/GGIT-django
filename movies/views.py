@@ -45,3 +45,14 @@ def user_signup(request):
         template_name="registration/signup_form.html",
         context={'form':form}
     )
+
+
+def movie_detail(request, movie_id):
+    my_context = {"movie": Movie.objects.get(id=movie_id)}
+    return render(request, template_name="movie_detail.html", context=my_context)
+
+from movies.models import Review
+
+def review_list(request):
+    my_context = {"reviews": Review.objects.all()}
+    return render(request, template_name="review_list.html", context=my_context)

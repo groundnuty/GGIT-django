@@ -27,7 +27,9 @@ urlpatterns = [
     path('accounts/profile/', views.profile_view, name='user_profile'),
     path('accounts/signup/', views.user_signup, name="user_signup"),
 
-    path('filmy/', views.movie_list),
+    path('filmy/', views.movie_list, name="movie_list"),
+    path('filmy/<int:movie_id>', views.movie_detail, name="movie_detail"),
+    path('recenzje/', views.review_list, name="review_list"),
     path('subpage/', views.subpage),
     path('admin/', admin.site.urls),
     path('hello/', views.hello_world),

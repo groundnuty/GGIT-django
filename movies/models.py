@@ -36,3 +36,14 @@ class Director(models.Model):
 
     def __str__(self):
         return "Reżyser: " + self.first_name + " " + self.last_name
+
+
+class Review(models.Model):
+    movie = models.ForeignKey(
+        to="movies.Movie",
+        verbose_name="recenzja filmu",
+        on_delete=models.CASCADE
+    )
+    author = models.CharField(verbose_name="autor recenzji", max_length=250)
+    content = models.TextField(verbose_name="treść recenzji")
+    is_recommended = models.BooleanField(verbose_name="polecam innym")

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            {% for review in reviews %}
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">
+                    Recenzja filmu {{ review.movie.title }}
+                    napisana przez {{ review.author }} </h5>
+                    <p class="card-text">{{ review.content }}</p>
+                    <a href="#" class="btn btn-primary">Zaobacz więcej</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

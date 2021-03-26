@@ -2,13 +2,22 @@
 
 {% block content %}
 
-<ul>
-{% for movie in movies %}
-    <li>
-        Film:  {{ movie.title }}
-        (data publikacji: {{ movie.published_at }})
-    </li>
-{% endfor %}
-</ul>
+<section>
+    <div class="container">
+        <div class="row">
+            {% for movie in movies %}
+                <div class="col-12 mt-3 card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ movie.title }}</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="{% url 'movie_detail' movie.id %}" class="btn btn-primary">
+                            Czytaj więcej
+                        </a>
+                    </div>
+                </div>   
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
 {% endblock %}

@@ -18,7 +18,7 @@ from django.urls import path, include
 from movies import views
 
 from django.urls import include
-
+from movies.views import ZeroConfigurationDatatableView 
 # http://127.0.0.1:8000/account/login
 urlpatterns = [
     path('', views.index, name="index"),
@@ -33,4 +33,5 @@ urlpatterns = [
     path('subpage/', views.subpage),
     path('admin/', admin.site.urls),
     path('hello/', views.hello_world),
+    path('topmovies/', ZeroConfigurationDatatableView.as_view(), name="top_movies"),
 ]

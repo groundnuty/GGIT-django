@@ -56,3 +56,9 @@ from movies.models import Review
 def review_list(request):
     my_context = {"reviews": Review.objects.all()}
     return render(request, template_name="review_list.html", context=my_context)
+
+from movies.models import Movie
+from datatableview.views import DatatableView
+class ZeroConfigurationDatatableView(DatatableView):
+    model = Movie
+    template_name = "top_movies.html"

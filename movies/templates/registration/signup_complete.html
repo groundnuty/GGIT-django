@@ -2,8 +2,11 @@
 
 {% block content %}
 
-<h1>Dziękujemy za rejestrację na naszej stronie!</h1>
-
-<a href="{% url 'login' %}" class="btn btn-success">Zaloguj się</a>
+<div class="container">
+    <div class="card card-body mt-2">
+        <h1>Dziękujemy za rejestrację</h1>
+        <a href="{% url 'login' %}">Zaloguj się</a>
+    </div>
+</div>
 
 {% endblock %}
